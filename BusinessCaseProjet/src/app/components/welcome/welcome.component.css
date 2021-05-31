@@ -1,0 +1,40 @@
+.photo {
+  clip-path: polygon(0 0, 100% 15%, 100% 100%, 0% 100%);
+
+  background-color: aqua;
+  width: 200px;
+  height: 200px;
+  margin-top: 900px;
+}
+
+.photo1 {
+  clip-path: polygon(0 0, 100% 15%, 100% 100%, 0% 100%);
+  background-color: aqua;
+  width: 200px;
+  height: 200px;
+  margin-top: 900px;
+}
+.photo2 {
+  clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%);
+  background-color: aqua;
+  width: 200px;
+  height: 200px;
+  margin-top: 900px;
+}
+.photo3 {
+  clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%);
+  background-color: aqua;
+  width: 200px;
+  height: 200px;
+  margin-top: 900px;
+}
+.flex {
+  display: flex;
+}
+.gap {
+  gap: 1em;
+}
+p {
+  text-align: center;
+  margin-top: 950px;
+}
