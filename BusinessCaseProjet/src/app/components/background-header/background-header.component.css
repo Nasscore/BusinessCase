@@ -1,6 +1,0 @@
-.bgHeader {
-  position: absolute;
-  z-index: -1;
-  top: 0px;
-  clip-path: polygon(0% 0%, 100% 0, 100% 85%, 51% 100%, 0 85%);
-}
