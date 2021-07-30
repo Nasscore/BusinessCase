@@ -1,0 +1,46 @@
+.photo {
+  clip-path: polygon(0 0, 100% 15%, 100% 100%, 0% 100%);
+
+  background-color: aqua;
+  width: 200px;
+  height: 200px;
+  margin-top: 350%;
+}
+
+.photo1 {
+  clip-path: polygon(0 0, 100% 15%, 100% 100%, 0% 100%);
+  background-color: aqua;
+  width: 200px;
+  height: 200px;
+  margin-top: 350%;
+}
+.photo2 {
+  clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%);
+  background-color: aqua;
+  width: 200px;
+  height: 200px;
+  margin-top: 350%;
+}
+.photo3 {
+  clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%);
+  background-color: aqua;
+  width: 200px;
+  height: 200px;
+  margin-top: 350%;
+}
+.flex {
+  display: flex;
+}
+.gap {
+  gap: 1em;
+}
+p {
+  text-align: center;
+  margin-top: 375%;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.photo .photo1 .photo2 .photo3:hover {
+  background-image: ;
+}
