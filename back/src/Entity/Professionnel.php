@@ -15,6 +15,9 @@ use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\SearchFilter;
 
 /**
  * @ApiResource(
+ *     attributes={
+ *          "security"="is_granted('ROLE_ADMIN')"
+ *      },
  *     normalizationContext={
  *          "groups"={"professionnel:get"}
  *      }

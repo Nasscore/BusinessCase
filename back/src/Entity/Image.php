@@ -9,6 +9,28 @@ use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ApiResource(
+ *collectionOperations={
+ *          "get"={
+ *              "security"="is_granted('ROLE_ADMIN')"
+ *          },
+ *          "post"={
+ *              "security"="is_granted('ROLE_USER')"
+ *          }
+ *      },
+ *      itemOperations={
+ *          "get"={
+ *              "security"="is_granted('ROLE_ADMIN') or object.annonce.garage.professionnel == user"
+ *          },
+ *          "put"={
+ *              "security"="is_granted('ROLE_ADMIN') or object.annonce.garage.professionnel == user"
+ *          },
+ *          "delete"={
+ *              "security"="is_granted('ROLE_ADMIN') or object.annonce.garage.professionnel == user"
+ *          },
+ *          "patch"={
+ *              "security"="is_granted('ROLE_ADMIN') or object.annonce.garage.professionnel == user"
+ *          }
+ *      },
  *     normalizationContext={
  *          "groups"={"image:get"}
  *      }
