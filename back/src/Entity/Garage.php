@@ -2,12 +2,16 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Core\Annotation\ApiFilter;
 use ApiPlatform\Core\Annotation\ApiResource;
 use App\Repository\GarageRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Annotation\Groups;
+use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\SearchFilter;
+use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\DateFilter;
+
 
 /**
  * @ApiResource(
@@ -15,6 +19,14 @@ use Symfony\Component\Serializer\Annotation\Groups;
  *          "groups"={"garage:get"}
  *      }
  * )
+ * @ApiFilter(SearchFilter::class, properties={"nom"="partial",
+ *                                             "professionnel.nom"="partial",
+ *                                             "professionnel.prenom"="partial",
+ *                                             "annonces.titre"="partial",
+ *                                             "ville"="partial",
+ *                                             "email"="partial",
+ *                                             "annonces.referenceAnnonce"="partial"})
+ * @ApiFilter(DateFilter::class, properties={"annonces.datePublication"})
  * @ORM\Entity(repositoryClass=GarageRepository::class)
  */
 class Garage

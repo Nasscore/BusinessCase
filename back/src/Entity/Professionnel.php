@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Core\Annotation\ApiFilter;
 use ApiPlatform\Core\Annotation\ApiResource;
 use App\Repository\ProfessionnelRepository;
 use Doctrine\Common\Collections\ArrayCollection;
@@ -10,6 +11,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Serializer\Annotation\Groups;
+use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\SearchFilter;
 
 /**
  * @ApiResource(
@@ -17,6 +19,13 @@ use Symfony\Component\Serializer\Annotation\Groups;
  *          "groups"={"professionnel:get"}
  *      }
  * )
+ * @ApiFilter(SearchFilter::class, properties={"nom"="partial",
+ *                                             "prenom"="partial",
+ *                                             "email"="partial",
+ *                                             "garages.nom"="partial",
+ *                                             "garages.ville"="partial"
+ *                                             })
+
  * @ORM\Entity(repositoryClass=ProfessionnelRepository::class)
  */
 class Professionnel implements UserInterface, PasswordAuthenticatedUserInterface
@@ -58,7 +67,7 @@ class Professionnel implements UserInterface, PasswordAuthenticatedUserInterface
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Groups({"garage:get"})
+     * @Groups({"garage:get","professionnel:get"})
      */
     private $email;
 
